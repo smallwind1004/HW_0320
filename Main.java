@@ -259,7 +259,7 @@ public class Main {
                         if (tmp.equals("2")) {
                             tmp = trucks.get(ntmp).getColor();
                             trucks.get(ntmp).setColor(sc.nextLine());
-                            System.out.println(tmp + " -> " + trucks.get(ntmp).getColor());6
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getColor());
                         }
                         if (tmp.equals("3")) {
                             tmp = trucks.get(ntmp).getCapacity();
