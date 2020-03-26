@@ -22,7 +22,7 @@ public class Sedan extends Car{
         this.type = newType;
     }
 
-    public String gettype() {
+    public String getType() {
         return this.type;
     }
 
@@ -39,6 +39,6 @@ public class Sedan extends Car{
         return "Sedan : " + super.showInfo();
     }
     public String showAll(){
-        return "Sedan : " + super.showAll() + "\n------\ngoodcapacity : " + getPeopleNum() + "\n------\ndoor : " + gettype() + "\n------\nuse : " + getUse();
+        return "Sedan : " + super.showAll() + "\n------\ngoodcapacity : " + getPeopleNum() + "\n------\ndoor : " + getType() + "\n------\nuse : " + getUse();
     }
 }

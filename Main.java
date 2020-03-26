@@ -19,7 +19,7 @@ public class Main {
             System.out.println(
                     "menu:\n1: Add new Car\n2: Search Car by name\n3: Search Car by category\n4: Update Car\n5: Show Car list\n6: Exit.\noperations: ");
             String tmp = sc.nextLine();
-/* ok */    if (tmp.equals("1")) {
+            /* ok */ if (tmp.equals("1")) {
                 System.out.println("category : T: Truck    B: Bus    Se: Sedan    Su: SUV");
                 while (true) {
                     System.out.print("category->");
@@ -118,7 +118,7 @@ public class Main {
                 }
 
             }
-/* ok */    if (tmp.equals("2")) {
+            /* ok */ if (tmp.equals("2")) {
                 System.out.println("Search Car by name :");
                 while (true) {
                     System.out.print("->");
@@ -167,7 +167,7 @@ public class Main {
                     }
                 }
             }
-/* ok */    if (tmp.equals("3")) {
+            /* ok */ if (tmp.equals("3")) {
                 while (true) {
                     System.out.println("Search Car by category: T: Truck    B: Bus    Se: Sedan    Su: SUV");
                     System.out.print("category->");
@@ -200,11 +200,13 @@ public class Main {
                         System.out.println(trucks.get(ntmp).showAll());
                     } else if (tmp.equals("b") || tmp.equals("B") || tmp.equals("Bus") || tmp.equals("bus")) {
                         System.out.println(buses.get(ntmp).showAll());
-                    } else if (tmp.equals("se") || tmp.equals("Se") || tmp.equals("SE") || tmp.equals("sE") || tmp.equals("Sedan") || tmp.equals("sedan")) {
+                    } else if (tmp.equals("se") || tmp.equals("Se") || tmp.equals("SE") || tmp.equals("sE")
+                            || tmp.equals("Sedan") || tmp.equals("sedan")) {
                         System.out.println(sedans.get(ntmp).showAll());
-                    } else if (tmp.equals("su") || tmp.equals("Su") || tmp.equals("SU") || tmp.equals("sU") || tmp.equals("Suv") || tmp.equals("suv")) {
+                    } else if (tmp.equals("su") || tmp.equals("Su") || tmp.equals("SU") || tmp.equals("sU")
+                            || tmp.equals("Suv") || tmp.equals("suv")) {
                         System.out.println(suvs.get(ntmp).showAll());
-                    } else{
+                    } else {
                     }
                     System.out.println("continue?(y/n)");
                     tmp = sc.nextLine();
@@ -215,164 +217,248 @@ public class Main {
                     }
                 }
             }
-/* ok */    if (tmp.equals("4")) {
+            if (tmp.equals("4")) {
                 System.out.println("Update Car :");
                 while (true) {
-                    int ntmp2 = 0;
-                    System.out.print("name->");
+                    System.out.print("category->");
                     tmp = sc.nextLine();
-                    for (int i = 0; i <= 5; i++) {
-                        if(i == 5){
-                            ctmp = String.valueOf(i);
-                        }else{
-                            for (int j = 0; j < trucks.size(); j++) {
-                                if (ctmp.equals(" ")){
-                                    if (tmp.equals(trucks.get(j).getName())) {
-                                        ntmp2 = i;
-                                        ntmp = j;
-                                        break;
-                                    }
-                                }else{
-                                    break;
-                                }
-                            }
-                            for (int j = 0; j < buses.size(); j++) {
-                                if (ctmp.equals(" ")){
-                                    if (tmp.equals(buses.get(j).getName())) {
-                                        ntmp2 = i;
-                                        ntmp = j;
-                                        break;
-                                    }
-                                }else{
-                                    break;
-                                }
-                            }
-                            for (int j = 0; j < sedans.size(); j++) {
-                                if (ctmp.equals(" ")){
-                                    if (tmp.equals(sedans.get(j).getName())) {
-                                        ntmp2 = i;
-                                        ntmp = j;
-                                        break;
-                                    }
-                                }else{
-                                    break;
-                                }
-                            }
-                            for (int j = 0; j < suvs.size(); j++) {
-                                if (ctmp.equals(" ")){
-                                    if (tmp.equals(suvs.get(j).getName())) {
-                                        ntmp2 = i;
-                                        ntmp = j;
-                                        break;
-                                    }
-                                }else{
-                                    break;
-                                }
-                            }
+                    if (tmp.equals("t") || tmp.equals("T") || tmp.equals("Truck") || tmp.equals("truck")) {
+                        for (int i = 0; i < trucks.size(); i++) {
+                            System.out.println(i + "=>" + trucks.get(i).getName());
+                            System.out.println("-----------");
+                        }
+                    } else if (tmp.equals("b") || tmp.equals("B") || tmp.equals("Bus") || tmp.equals("bus")) {
+                        for (int i = 0; i < buses.size(); i++) {
+                            System.out.println(i + "=>" + buses.get(i).getName());
+                            System.out.println("-----------");
+                        }
+                    } else if (tmp.equals("se") || tmp.equals("Se") || tmp.equals("SE") || tmp.equals("sE")
+                            || tmp.equals("Sedan") || tmp.equals("sedan")) {
+                        for (int i = 0; i < sedans.size(); i++) {
+                            System.out.println(i + "=>" + sedans.get(i).getName());
+                            System.out.println("-----------");
+                        }
+                    } else if (tmp.equals("su") || tmp.equals("Su") || tmp.equals("SU") || tmp.equals("sU")
+                            || tmp.equals("Suv") || tmp.equals("suv")) {
+                        for (int i = 0; i < trucks.size(); i++) {
+                            System.out.println(i + "=>" + suvs.get(i).getName());
+                            System.out.println("-----------");
                         }
                     }
-                    System.out.println("which imformation want change?");
-                    if (ntmp2 == 1) {
-                        System.out.println("1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.gcapacity, 9.tairs");
-                        System.out.print("->");
+                    ntmp = Integer.parseInt(sc.nextLine());
+                    if (tmp.equals("t") || tmp.equals("T") || tmp.equals("Truck") || tmp.equals("truck")) {
+                        System.out.println("Which want to change?");
+                        System.out.println(
+                                "1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.gcapacity, 9.tairsNum");
                         tmp = sc.nextLine();
                         if (tmp.equals("1")) {
+                            tmp = trucks.get(ntmp).getName();
                             trucks.get(ntmp).setName(sc.nextLine());
-                        } if (tmp.equals("2")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getName());
+                        }
+                        if (tmp.equals("2")) {
+                            tmp = trucks.get(ntmp).getColor();
                             trucks.get(ntmp).setColor(sc.nextLine());
-                        } if (tmp.equals("3")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getColor());6
+                        }
+                        if (tmp.equals("3")) {
+                            tmp = trucks.get(ntmp).getCapacity();
                             trucks.get(ntmp).setCapacity(sc.nextLine());
-                        } if (tmp.equals("4")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getCapacity());
+                        }
+                        if (tmp.equals("4")) {
+                            tmp = trucks.get(ntmp).getPowertype();
                             trucks.get(ntmp).setPowetype(sc.nextLine());
-                        } if (tmp.equals("5")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getPowertype());
+                        }
+                        if (tmp.equals("5")) {
+                            tmp = trucks.get(ntmp).getWeight();
                             trucks.get(ntmp).setWeight(sc.nextLine());
-                        } if (tmp.equals("6")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getWeight());
+                        }
+                        if (tmp.equals("6")) {
+                            tmp = trucks.get(ntmp).getDisp();
                             trucks.get(ntmp).setDisp(sc.nextLine());
-                        } if (tmp.equals("7")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getDisp());
+                        }
+                        if (tmp.equals("7")) {
+                            tmp = trucks.get(ntmp).getYear();
                             trucks.get(ntmp).setYear(sc.nextLine());
-                        } if (tmp.equals("8")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getYear());
+                        }
+                        if (tmp.equals("8")) {
+                            tmp = trucks.get(ntmp).getGcapacity();
                             trucks.get(ntmp).setGcapacity(sc.nextLine());
-                        } if (tmp.equals("9")) {
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getGcapacity());
+                        }
+                        if (tmp.equals("9")) {
+                            tmp = trucks.get(ntmp).getTairsNum();
                             trucks.get(ntmp).setTairsNum(sc.nextLine());
+                            System.out.println(tmp + " -> " + trucks.get(ntmp).getTairsNum());
                         }
-                    }
-                    else if (ntmp2 == 2) {
-                        System.out.println("1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.people, 9.door, 10.company");
-                        System.out.print("->");
+                    } else if (tmp.equals("b") || tmp.equals("B") || tmp.equals("Bus") || tmp.equals("bus")) {
+                        System.out.println("Which want to change?");
+                        System.out.println(
+                                "1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.peopleNum, 9.doorNum, 10.company");
                         tmp = sc.nextLine();
                         if (tmp.equals("1")) {
+                            tmp = buses.get(ntmp).getName();
                             buses.get(ntmp).setName(sc.nextLine());
-                        } if (tmp.equals("2")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getName());
+                        }
+                        if (tmp.equals("2")) {
+                            tmp = buses.get(ntmp).getColor();
                             buses.get(ntmp).setColor(sc.nextLine());
-                        } if (tmp.equals("3")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getColor());
+                        }
+                        if (tmp.equals("3")) {
+                            tmp = buses.get(ntmp).getCapacity();
                             buses.get(ntmp).setCapacity(sc.nextLine());
-                        } if (tmp.equals("4")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getCapacity());
+                        }
+                        if (tmp.equals("4")) {
+                            tmp = buses.get(ntmp).getPowertype();
                             buses.get(ntmp).setPowetype(sc.nextLine());
-                        } if (tmp.equals("5")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getPowertype());
+                        }
+                        if (tmp.equals("5")) {
+                            tmp = buses.get(ntmp).getWeight();
                             buses.get(ntmp).setWeight(sc.nextLine());
-                        } if (tmp.equals("6")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getWeight());
+                        }
+                        if (tmp.equals("6")) {
+                            tmp = buses.get(ntmp).getDisp();
                             buses.get(ntmp).setDisp(sc.nextLine());
-                        } if (tmp.equals("7")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getDisp());
+                        }
+                        if (tmp.equals("7")) {
+                            tmp = buses.get(ntmp).getYear();
                             buses.get(ntmp).setYear(sc.nextLine());
-                        } if (tmp.equals("8")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getYear());
+                        }
+                        if (tmp.equals("8")) {
+                            tmp = buses.get(ntmp).getPeopleNum();
                             buses.get(ntmp).setPeopleNum(sc.nextLine());
-                        } if (tmp.equals("9")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getPeopleNum());
+                        }
+                        if (tmp.equals("9")) {
+                            tmp = buses.get(ntmp).getDoorNum();
                             buses.get(ntmp).setDoorNum(sc.nextLine());
-                        } if (tmp.equals("10")) {
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getDoorNum());
+                        }
+                        if (tmp.equals("10")) {
+                            tmp = buses.get(ntmp).getCompany();
                             buses.get(ntmp).setCompany(sc.nextLine());
+                            System.out.println(tmp + " -> " + buses.get(ntmp).getCompany());
                         }
-                    }
-                    else if (ntmp2 == 3) {
-                        System.out.println("1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.people, 9.type, 10.use");
-                        System.out.print("->");
+                    } else if (tmp.equals("se") || tmp.equals("Se") || tmp.equals("SE") || tmp.equals("sE")
+                            || tmp.equals("Sedan") || tmp.equals("sedan")) {
+                        System.out.println("Which want to change?");
+                        System.out.println(
+                                "1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.peopleNum, 9.type, 10.use");
                         tmp = sc.nextLine();
                         if (tmp.equals("1")) {
+                            tmp = sedans.get(ntmp).getName();
                             sedans.get(ntmp).setName(sc.nextLine());
-                        } if (tmp.equals("2")) {
-                            sedans.get(ntmp).setColor(sc.nextLine());
-                        } if (tmp.equals("3")) {
-                            sedans.get(ntmp).setCapacity(sc.nextLine());
-                        } if (tmp.equals("4")) {
-                            sedans.get(ntmp).setPowetype(sc.nextLine());
-                        } if (tmp.equals("5")) {
-                            sedans.get(ntmp).setWeight(sc.nextLine());
-                        } if (tmp.equals("6")) {
-                            sedans.get(ntmp).setDisp(sc.nextLine());
-                        } if (tmp.equals("7")) {
-                            sedans.get(ntmp).setYear(sc.nextLine());
-                        } if (tmp.equals("8")) {
-                            sedans.get(ntmp).setPeopleNum(sc.nextLine());
-                        } if (tmp.equals("9")) {
-                            sedans.get(ntmp).setType(sc.nextLine());
-                        } if (tmp.equals("10")) {
-                            sedans.get(ntmp).setUse(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getName());
                         }
-                    }
-                    else if (ntmp2 == 4) {
-                        System.out.println("1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.price, 9.type");
-                        System.out.print("->");
+                        if (tmp.equals("2")) {
+                            tmp = sedans.get(ntmp).getColor();
+                            sedans.get(ntmp).setColor(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getColor());
+                        }
+                        if (tmp.equals("3")) {
+                            tmp = sedans.get(ntmp).getCapacity();
+                            sedans.get(ntmp).setCapacity(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getCapacity());
+                        }
+                        if (tmp.equals("4")) {
+                            tmp = sedans.get(ntmp).getPowertype();
+                            sedans.get(ntmp).setPowetype(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getPowertype());
+                        }
+                        if (tmp.equals("5")) {
+                            tmp = sedans.get(ntmp).getWeight();
+                            sedans.get(ntmp).setWeight(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getWeight());
+                        }
+                        if (tmp.equals("6")) {
+                            tmp = sedans.get(ntmp).getDisp();
+                            sedans.get(ntmp).setDisp(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getDisp());
+                        }
+                        if (tmp.equals("7")) {
+                            tmp = sedans.get(ntmp).getYear();
+                            sedans.get(ntmp).setYear(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getYear());
+                        }
+                        if (tmp.equals("8")) {
+                            tmp = sedans.get(ntmp).getPeopleNum();
+                            sedans.get(ntmp).setPeopleNum(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getPeopleNum());
+                        }
+                        if (tmp.equals("9")) {
+                            tmp = sedans.get(ntmp).getType();
+                            sedans.get(ntmp).setType(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getType());
+                        }
+                        if (tmp.equals("10")) {
+                            tmp = sedans.get(ntmp).getUse();
+                            sedans.get(ntmp).setUse(sc.nextLine());
+                            System.out.println(tmp + " -> " + sedans.get(ntmp).getUse());
+                        }
+                    } else if (tmp.equals("su") || tmp.equals("Su") || tmp.equals("SU") || tmp.equals("sU")
+                            || tmp.equals("Suv") || tmp.equals("suv")) {
+                        System.out.println("Which want to change?");
+                        System.out.println(
+                                "1.name, 2.color, 3.capacity, 4.powertype, 5.weight, 6.disp, 7.year, 8.price, 9.type");
                         tmp = sc.nextLine();
                         if (tmp.equals("1")) {
+                            tmp = suvs.get(ntmp).getName();
                             suvs.get(ntmp).setName(sc.nextLine());
-                        } if (tmp.equals("2")) {
-                            suvs.get(ntmp).setColor(sc.nextLine());
-                        } if (tmp.equals("3")) {
-                            suvs.get(ntmp).setCapacity(sc.nextLine());
-                        } if (tmp.equals("4")) {
-                            suvs.get(ntmp).setPowetype(sc.nextLine());
-                        } if (tmp.equals("5")) {
-                            suvs.get(ntmp).setWeight(sc.nextLine());
-                        } if (tmp.equals("6")) {
-                            suvs.get(ntmp).setDisp(sc.nextLine());
-                        } if (tmp.equals("7")) {
-                            suvs.get(ntmp).setYear(sc.nextLine());
-                        } if (tmp.equals("8")) {
-                            suvs.get(ntmp).setPrice(sc.nextLine());
-                        } if (tmp.equals("9")) {
-                            suvs.get(ntmp).setType(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getName());
                         }
-                    }else{
-                        System.out.println("Cannot find this car");
+                        if (tmp.equals("2")) {
+                            tmp = suvs.get(ntmp).getColor();
+                            suvs.get(ntmp).setColor(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getColor());
+                        }
+                        if (tmp.equals("3")) {
+                            tmp = suvs.get(ntmp).getCapacity();
+                            suvs.get(ntmp).setCapacity(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getCapacity());
+                        }
+                        if (tmp.equals("4")) {
+                            tmp = suvs.get(ntmp).getPowertype();
+                            suvs.get(ntmp).setPowetype(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getPowertype());
+                        }
+                        if (tmp.equals("5")) {
+                            tmp = suvs.get(ntmp).getWeight();
+                            suvs.get(ntmp).setWeight(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getWeight());
+                        }
+                        if (tmp.equals("6")) {
+                            tmp = suvs.get(ntmp).getDisp();
+                            suvs.get(ntmp).setDisp(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getDisp());
+                        }
+                        if (tmp.equals("7")) {
+                            tmp = suvs.get(ntmp).getYear();
+                            suvs.get(ntmp).setYear(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getYear());
+                        }
+                        if (tmp.equals("8")) {
+                            tmp = suvs.get(ntmp).getPrice();
+                            suvs.get(ntmp).setPrice(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getPrice());
+                        }
+                        if (tmp.equals("9")) {
+                            tmp = suvs.get(ntmp).getType();
+                            suvs.get(ntmp).setType(sc.nextLine());
+                            System.out.println(tmp + " -> " + suvs.get(ntmp).getType());
+                        }
+                    } else {
                     }
                     System.out.println("continue?(y/n)");
                     tmp = sc.nextLine();
@@ -383,7 +469,7 @@ public class Main {
                     }
                 }
             }
-/* ok */    if (tmp.equals("5")) {
+            /* ok */ if (tmp.equals("5")) {
                 System.out.println("show list :");
                 System.out.println("Truck :");
                 for (int i = 0; i < trucks.size(); i++) {
@@ -410,7 +496,7 @@ public class Main {
                 }
                 System.out.println("==========");
             }
-/* ok */    if (tmp.equals("6")) {
+            /* ok */ if (tmp.equals("6")) {
                 break;
             }
         }
