@@ -215,7 +215,7 @@ public class Main {
                     }
                 }
             }
-            if (tmp.equals("4")) {
+/* ok */    if (tmp.equals("4")) {
                 System.out.println("Update Car :");
                 while (true) {
                     int ntmp2 = 0;

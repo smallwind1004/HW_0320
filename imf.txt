@@ -1,0 +1,4 @@
+truck t1  white 100  diesel   25000 12L    2000 20000 6
+bus   b1  green none electric 12000 100*L  2015 40    3   ubus
+sedan se1 red   62   gasoline 1521  2L     2020 5     RV  self
+suv   su1 black 55   gasoline 1700  2.5L   2019 5 sity
